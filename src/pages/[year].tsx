@@ -4,25 +4,30 @@ import range from 'lodash/range'
 import Layout from '../components/Layout'
 import { DriverStandings, DriverStandingsLists } from '../types/standings'
 
-const rating = {
+type ratingTypes = {
+  [key: string]: string;
+};
+
+const rating: ratingTypes = {
   //1: '🥇',
   1: '🏆',
   2: '🥈',
   3: '🥉'
 }
 
-const Standings: NextPage<DriverStandingsLists> = ({ standings }) => {
+const Standings: NextPage<{standings: DriverStandingsLists}> = ({ standings }) => {
   console.log(standings)
   return (
     <Layout title="Pitman | Home">
       <h1>standings 👋</h1>
       season:  {standings.season} 🌍 round: {standings.round}
         <ul>
-          {standings.DriverStandings.map((standing: DriverStandings) => (
-            <li key={standing?.Driver?.driverId} style={{...( standing?.position === '1' && { backgroundColor: 'aqua' })}}>
-              {rating[standing?.position]}
+          {standings.DriverStandings ?
+          standings.DriverStandings.map((standing: DriverStandings) => (
+            <li key={standing.Driver?.driverId} style={{...( standing.position === '1' && { backgroundColor: 'aqua' })}}>
+              {rating[standing.position || 0]}
               {/* {standing?.position === '1' && '🏆'} */}
-              {standing?.position}
+              {standing.position}
               {' - '}
 							{standing?.Driver?.givenName}
               {' '}
@@ -32,7 +37,9 @@ const Standings: NextPage<DriverStandingsLists> = ({ standings }) => {
               {' '}
               Wins: {standing?.wins} {Number(standing.wins) > 0 && '🏁'}
 						</li>
-          ))}
+          )) :
+          <div>no data</div>
+          }
         </ul>
     </Layout>
   )
