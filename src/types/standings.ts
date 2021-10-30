@@ -1,3 +1,9 @@
+/*
+ * I'm using interface instead of types.
+ * Because It's recommended to use interface when dealing with public APIs.
+ * source: https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example/#types-or-interfaces
+ */
+
 export interface Constructor {
   constructorId: string
   url: string
@@ -16,7 +22,7 @@ export interface Driver {
   nationality?: string
 }
 
-export type DriverStandings = {
+export interface DriverStandings {
   Constructors?: Constructor[]
   Driver?: Driver
   points?: string
@@ -25,7 +31,7 @@ export type DriverStandings = {
   wins?: string
 }
 
-export type DriverStandingsLists = {
+export interface DriverStandingsLists {
   DriverStandings?: DriverStandings[]
   season?: string
   round?: string
