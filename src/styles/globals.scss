@@ -1,24 +1,32 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: #343434;
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	color: #343434;
 }
 
 body {
-  overflow-y: scroll;
-  background: #a73737;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #7a2828, #a73737);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #7a2828, #a73737); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	overflow-y: scroll;
+	background: #a73737; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to bottom,
+		#7a2828,
+		#a73737
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		#7a2828,
+		#a73737
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }

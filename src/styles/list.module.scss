@@ -1,39 +1,40 @@
 @import '_variables.scss';
 
 .title {
-  color: #fff;
+	color: #fff;
 }
 
 .list {
-  &Container {
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    border-radius: $list-border-radius;
-    background-color: rgb(255 255 250 / 90%);
-    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+	&Container {
+		margin: 1rem;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 400px;
+		border-radius: $list-border-radius;
+		background-color: rgb(255 255 250 / 90%);
+		box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+			rgb(0 0 0 / 12%) 0px 1px 3px 0px;
 
-    & > div,
-    & > a {
-      padding: 1rem 2rem;
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-      background-color: inherit;
+		& > div,
+		& > a {
+			padding: 1rem 2rem;
+			box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+			background-color: inherit;
 
-      &:first-child {
-        border-top-left-radius: $list-border-radius;
-        border-top-right-radius: $list-border-radius;
-      }
-  
-      &:last-child {
-        border-bottom-left-radius: $list-border-radius;
-        border-bottom-right-radius: $list-border-radius;
-      }
-  
-      &:not(:last-child) {
-        border-bottom: 1px solid $list-border-color;
-      }
-    }
-  }
+			&:first-child {
+				border-top-left-radius: $list-border-radius;
+				border-top-right-radius: $list-border-radius;
+			}
+
+			&:last-child {
+				border-bottom-left-radius: $list-border-radius;
+				border-bottom-right-radius: $list-border-radius;
+			}
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $list-border-color;
+			}
+		}
+	}
 }
