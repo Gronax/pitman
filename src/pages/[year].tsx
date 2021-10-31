@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import range from 'lodash/range'
-import Layout from '../components/Layout'
-import { RaceResult, DriverStandings } from '../types/api'
-import styles from '../styles/card.module.scss'
-import { FaHashtag, FaCode, FaTrophy, FaBirthdayCake, FaUsers } from "react-icons/fa";
-import moment from 'moment'
 import { useRouter } from 'next/router'
+import { RaceResult, DriverStandings } from '../types/api'
+import range from 'lodash/range'
+import moment from 'moment'
 import clsx from 'clsx'
+import { FaHashtag, FaCode, FaTrophy, FaBirthdayCake, FaUsers } from "react-icons/fa";
+import Layout from '../components/Layout'
 import List from '../components/List';
+import styles from '../styles/card.module.scss'
 
 const MOMENT_FORMAT = 'DD.MM.YYYY'
 

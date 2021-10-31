@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import range from 'lodash/range'
 import Link from 'next/link'
+import range from 'lodash/range'
 import Layout from '../components/Layout'
 import List from '../components/List'
 
