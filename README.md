@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 💬 About
+I'm using [http://ergast.com/mrd/](http://ergast.com/mrd/) public API to show the F1 world champions starting from 2005 until now. Clicking on a year shows the list of the winners for every race for the selected year. Also highlighted the row when the winner has been the world champion in the same season.
 
-## Getting Started
+## 🚀 Live Demo
+[pitman.vercel.app](https://pitman.vercel.app/)
 
-First, run the development server:
-
+## 📦️ Usage
 ```bash
-npm run dev
-# or
+git clone https://github.com/Gronax/pitman.git
+cd pitman
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Tech Stack
+- [React](https://reactjs.org/)
+- [Next](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📝 My Notes
+I have choose Reactjs as frontend library because it's easy to use, mantain and well documented. And Nextjs because it provide faster build time, less config and easy to deploy on Vercel. I've always wanted to use Typescript so I thougt It's the right time to use it because you have to push yourself to try new things otherwise lazyness always the winner. Although It took so much of my time, dealing with the types for the first time is really complicated It was the real challenge for me I guess. As a matter of time, I couldn't use unit testing. Shame on me. 🙈
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+My approach is statically rendering years from 2005 to now. When a year selected, on `[year].tsx` file I get the year with query param. On build time I make a two API calls, one for winners for each race, one for get the world champion for selected year. To highlight the world champion I match these two API calls by driver_id. On the race list I provide race name, circuit name, driver name, driver team, driver date of birth, driver code and number.

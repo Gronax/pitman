@@ -3,6 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Navbar.module.scss'
 
+/**
+ * A function for both Header and Footer.
+ * @returns ReactNode
+ */
 const Navbar: NextPage = () => {
 	return (
 		<header className={styles.header}>

@@ -4,6 +4,10 @@ import range from 'lodash/range'
 import Layout from '../components/Layout'
 import List from '../components/List'
 
+/**
+ * This is the homepage and Its render list of static years starting from 2005 to the current year.
+ * @returns ReactNode
+ */
 const Home: NextPage = () => {
 	const yearRange = range(new Date().getUTCFullYear(), 2004, -1)
 

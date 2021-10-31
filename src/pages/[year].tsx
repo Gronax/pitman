@@ -12,6 +12,12 @@ import styles from '../styles/card.module.scss'
 
 const MOMENT_FORMAT = 'DD.MM.YYYY'
 
+/**
+ * As users select a year this page renders. On build time it gets year from query param and calls APIs to get winners for each race and world champion of the selected year. 
+ * @param races 
+ * @param standings 
+ * @returns ReactNode
+ */
 const Standings: NextPage<{ races: RaceResult[]; standings: DriverStandings }> = ({
 	races,
 	standings,
