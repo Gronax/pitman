@@ -1,0 +1,72 @@
+@import '_variables.scss';
+
+.race {
+  &Name {
+    margin: 0;
+    font-size: 22px;
+    color: #3c1616;
+  }
+}
+
+.circuit {
+  &Name {
+    margin: 0;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    font-size: 14px;
+    font-weight: 200;
+    color: #7d7d7d;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $list-border-color;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    small {
+      font-style: italic;
+    }
+  }
+}
+
+.driver {
+  &Name {
+    color: #333;
+    font-size: 18px;
+  }
+
+  &Details {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    margin-top: 6px;
+
+    & > div{
+      flex: 50%;
+    }
+  }
+}
+
+.icon {
+  font-size: 1rem;
+  margin-right: 8px;
+
+  &Trophy {
+    color: #e9c500;
+    font-size: 2rem;
+  }
+
+  &Bday {
+    color: #0084e9;
+  }
+
+  &Constructor {
+    color: #e99b00;
+  }
+
+  &Code {
+    color: #b71512;
+  }
+
+  &Number {
+    color: #6800e9;
+  }
+}

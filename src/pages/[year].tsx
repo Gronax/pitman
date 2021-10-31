@@ -3,11 +3,12 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import range from 'lodash/range'
 import Layout from '../components/Layout'
 import { RaceResult, DriverStandings } from '../types/api'
-import styles from '../styles/list.module.scss'
-import { FaHashtag, FaCode, FaTrophy, FaBirthdayCake, FaIdCard } from "react-icons/fa";
+import styles from '../styles/card.module.scss'
+import { FaHashtag, FaCode, FaTrophy, FaBirthdayCake, FaUsers } from "react-icons/fa";
 import moment from 'moment'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import List from '../components/List';
 
 const MOMENT_FORMAT = 'DD.MM.YYYY'
 
@@ -16,13 +17,12 @@ const Standings: NextPage<{races: RaceResult[], standings: DriverStandings}> = (
   const { year } = router.query
 
   return (
-    <Layout title="Pitman | Home">
-    <h1 className={styles.title}>{year} Grand Prix</h1>
-      <div className={styles.listContainer}>
+    <Layout title={`Pitman | ${year} Grand Prix`}>
+      <List title={`${year} Grand Prix`}>
         {races.map(race => {
           const isWorldChampion = race.Results[0].Driver.driverId === standings.Driver.driverId
           return (
-            <div key={race.round} className={styles.listItem}>
+            <div key={race.round} style={{backgroundColor: isWorldChampion ? '#fffad5' : 'inherit'}}>
               <a href={race.url} target='_blank' rel="noreferrer" className={styles.raceName}>{race.raceName}</a>
               <h5 className={styles.circuitName}>
                 <a href={race.Circuit.url} target='_blank' rel="noreferrer">
@@ -42,7 +42,7 @@ const Standings: NextPage<{races: RaceResult[], standings: DriverStandings}> = (
                     <div><FaBirthdayCake className={clsx([styles.icon, styles.iconBday])} />{moment(race.Results[0].Driver.dateOfBirth).format(MOMENT_FORMAT)}</div>
                     <div>
                       <a href={race.Results[0].Constructor.url} target='_blank' rel="noreferrer">
-                        <FaIdCard className={clsx([styles.icon, styles.iconConstructor])} />
+                        <FaUsers className={clsx([styles.icon, styles.iconConstructor])} />
                         {race.Results[0].Constructor.name}
                       </a>
                     </div>
@@ -54,7 +54,7 @@ const Standings: NextPage<{races: RaceResult[], standings: DriverStandings}> = (
             </div>
           )
         })}
-      </div>
+      </List>
     </Layout>
   )
 }
